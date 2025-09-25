@@ -1,10 +1,9 @@
-﻿namespace Examen_Mvvm.Views
+﻿namespace Examen_Mvvm.Views;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

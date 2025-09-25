@@ -11,30 +11,24 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
             <Label Text="Producto 1:" />
-            <Entry Text="{Binding Product1, Mode=TwoWay}" 
-                   Keyboard="Numeric"
-                   Placeholder="Ingrese el precio del producto 1" />
+            <Entry Text="{Binding Producto1, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Ingrese el precio del producto 1" />
 
             <Label Text="Producto 2:" />
-            <Entry Text="{Binding Product2, Mode=TwoWay}" 
-                   Keyboard="Numeric"
-                   Placeholder="Ingrese el precio del producto 2" />
+            <Entry Text="{Binding Producto2, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Ingrese el precio del producto 2" />
 
             <Label Text="Producto 3:" />
-            <Entry Text="{Binding Product3, Mode=TwoWay}" 
-                   Keyboard="Numeric"
-                   Placeholder="Ingrese el precio del producto 3" />
+            <Entry Text="{Binding Producto3, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Ingrese el precio del producto 3" />
 
             <Label Text="Subtotal:" />
-            <Entry Text="{Binding Subtotal, StringFormat='L{0:N2}'}" IsReadOnly="True" />
+            <Entry Text="{Binding SubtotalValue}" IsReadOnly="True" />
 
             <Label Text="Descuento aplicado (%):" />
-            <Entry Text="{Binding DescuentoAplicado}" IsReadOnly="True" />
+            <Entry Text="{Binding DescuentoAplicadoValue}" IsReadOnly="True" />
 
             <Label Text="Total a pagar:" />
-            <Entry Text="{Binding TotalPagar, StringFormat='L{0:N2}'}" IsReadOnly="True" />
+            <Entry Text="{Binding TotalPagar}" IsReadOnly="True" />
 
-            <Label Text="{Binding MensajeError}" TextColor="Red" IsVisible="{Binding MensajeError, Converter={StaticResource StringNotEmptyToBoolConverter}}" />
+            <Label Text="{Binding MensajeErrorValue}" TextColor="Red" IsVisible="{Binding MensajeErrorValue}" />
 
             <HorizontalStackLayout Spacing="20">
                 <Button Text="Calcular" Command="{Binding CalcularCommand}" />
@@ -43,4 +37,3 @@
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
-

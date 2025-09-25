@@ -6,28 +6,20 @@ namespace Examen_Mvvm.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
-    // Use [ObservableProperty] to generate backing fields and properties
-    [ObservableProperty]
-    private string producto1 = string.Empty;
-    [ObservableProperty]
-    private string producto2 = string.Empty;
-    [ObservableProperty]
-    private string producto3 = string.Empty;
+    [ObservableProperty] private string producto1 = string.Empty;
+    [ObservableProperty] private string producto2 = string.Empty;
+    [ObservableProperty] private string producto3 = string.Empty;
 
-    [ObservableProperty]
-    private decimal subtotalValue;
-    [ObservableProperty]
-    private int descuentoAplicadoValue;
-    [ObservableProperty]
-    private decimal totalPagar;
-
-    [ObservableProperty]
-    private string mensajeErrorValue = string.Empty;
+    [ObservableProperty] private decimal subtotalValue;
+    [ObservableProperty] private int descuentoAplicadoValue;
+    [ObservableProperty] private decimal totalPagar;
+    [ObservableProperty] private string mensajeErrorValue = string.Empty;
 
     [RelayCommand]
     private void Calcular()
     {
         MensajeErrorValue = string.Empty;
+
         if (!TryParseProducto(Producto1, out decimal p1) ||
             !TryParseProducto(Producto2, out decimal p2) ||
             !TryParseProducto(Producto3, out decimal p3))
