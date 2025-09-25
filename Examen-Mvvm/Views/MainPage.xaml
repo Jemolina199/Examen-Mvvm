@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Examen_Mvvm.ViewModels"
+             x:Class="Examen_Mvvm.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Producto 1:" />
+            <Entry Text="{Binding Product1, Mode=TwoWay}" 
+                   Keyboard="Numeric"
+                   Placeholder="Ingrese el precio del producto 1" />
+
+            <Label Text="Producto 2:" />
+            <Entry Text="{Binding Product2, Mode=TwoWay}" 
+                   Keyboard="Numeric"
+                   Placeholder="Ingrese el precio del producto 2" />
+
+            <Label Text="Producto 3:" />
+            <Entry Text="{Binding Product3, Mode=TwoWay}" 
+                   Keyboard="Numeric"
+                   Placeholder="Ingrese el precio del producto 3" />
+
+            <Label Text="Subtotal:" />
+            <Entry Text="{Binding Subtotal, StringFormat='L{0:N2}'}" IsReadOnly="True" />
+
+            <Label Text="Descuento aplicado (%):" />
+            <Entry Text="{Binding DescuentoAplicado}" IsReadOnly="True" />
+
+            <Label Text="Total a pagar:" />
+            <Entry Text="{Binding TotalPagar, StringFormat='L{0:N2}'}" IsReadOnly="True" />
+
+            <Label Text="{Binding MensajeError}" TextColor="Red" IsVisible="{Binding MensajeError, Converter={StaticResource StringNotEmptyToBoolConverter}}" />
+
+            <HorizontalStackLayout Spacing="20">
+                <Button Text="Calcular" Command="{Binding CalcularCommand}" />
+                <Button Text="Limpiar" Command="{Binding LimpiarCommand}" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
